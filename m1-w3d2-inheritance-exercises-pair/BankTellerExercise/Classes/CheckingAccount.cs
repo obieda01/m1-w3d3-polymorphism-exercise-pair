@@ -12,20 +12,22 @@ namespace BankTellerExercise.Classes
         public override DollarAmount Withdraw(DollarAmount amountToWithdraw)
 
         {
-            
+
             int balanceToCents = convertBalanceToCents(Balance.Dollars, Balance.Cents) - convertBalanceToCents(amountToWithdraw.Dollars, amountToWithdraw.Cents);
-            
-            if (balanceToCents < 0 && balanceToCents >-10000)
+
+            if (balanceToCents < 0 && balanceToCents > -10000)
             {
-                return new DollarAmount(balanceToCents-1000);
+                this.balance= new DollarAmount(balanceToCents - 1000);
+                return balance;
             }
-            else if  (balanceToCents <-10000)
-               {
-                return Balance;
-            }
-                
+            else if (balanceToCents < -10000)
             {
-                return new DollarAmount(balanceToCents);
+                return balance;
+            }
+
+            {
+                this.balance =balance.Minus( new DollarAmount(balanceToCents));
+                return balance;
             }
         }
     }

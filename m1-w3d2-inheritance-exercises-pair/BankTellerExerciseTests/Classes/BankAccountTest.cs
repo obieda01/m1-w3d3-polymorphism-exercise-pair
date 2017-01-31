@@ -45,18 +45,17 @@ namespace BankTellerExerciseTests.Classes
         [TestMethod]
         public void BankAccount_TransferTests()
         {
-            DollarAmount testedInstanceExpected = new DollarAmount(1000);
-            int expectedCents = testedInstanceExpected.Dollars * 100 + testedInstanceExpected.Cents;
-            BankAccount testedInstanceBankAccount = new BankAccount();
+            BankAccount dist=new BankAccount();
+            BankAccount source=new BankAccount();
 
-
-            DollarAmount testedInstanceActualDollarAmount = new DollarAmount(2000);
-            testedInstanceBankAccount.Deposit(testedInstanceActualDollarAmount);
-
-            DollarAmount testedInstanceActualAmountAfterWithdraw = testedInstanceBankAccount.Withdraw(testedInstanceExpected);
-
-            int actualAmountAfterWithdraw = testedInstanceActualAmountAfterWithdraw.Dollars * 100 + testedInstanceActualAmountAfterWithdraw.Cents;
-            Assert.AreEqual(expectedCents, actualAmountAfterWithdraw);
+            dist.Deposit(new DollarAmount(40,00));
+            source.Deposit(new DollarAmount(30,00));
+            source.Transfer(dist, new DollarAmount(10,00));
+            DollarAmount testedInstanceExpected = new DollarAmount(20, 00);
+            
+            Assert.AreEqual(testedInstanceExpected.ToString(), source.Balance.ToString() );
+            Assert.AreEqual("$60.00", dist.Balance.ToString());
+            
 
         }
 

@@ -12,7 +12,7 @@ namespace BankTellerExercise.Classes
     public class DollarAmount
     {
         private int totalAmountInCents;
-        
+
         /// <summary>
         /// Number of cents
         /// </summary>
@@ -93,7 +93,7 @@ namespace BankTellerExercise.Classes
         /// <param name="amountToAdd"></param>
         /// <returns>New Dollar Amount Value</returns>
         public DollarAmount Plus(DollarAmount amountToAdd)
-        {            
+        {
             int newTotal = this.totalAmountInCents + amountToAdd.totalAmountInCents;
 
             return new DollarAmount(newTotal);
@@ -102,7 +102,13 @@ namespace BankTellerExercise.Classes
         public override string ToString()
         {
             {
+                if (Math.Abs(Cents) < 10)
+                {
+                    return "$" + Dollars + ".0" + Math.Abs(Cents);
+                }
+
                 return "$" + Dollars + "." + Math.Abs(Cents);
+
             }
         }
 

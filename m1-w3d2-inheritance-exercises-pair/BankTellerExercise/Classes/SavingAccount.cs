@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BankTellerExercise.Classes
 {
-    class SavingAccount : BankAccount
+   public  class SavingAccount : BankAccount
     {
         public override DollarAmount Withdraw(DollarAmount amountToWithdraw)
 
@@ -16,11 +16,12 @@ namespace BankTellerExercise.Classes
 
             if (balanceToCents < 15000)
             {
-                return new DollarAmount(balanceToCents - 200);
+                this.balance = new DollarAmount(balanceToCents - 200);
+                return balance;
             }
-            else if (balanceToCents < 0)
+            else
             {
-                return Balance;
+                return balance;
             }
         }
     }

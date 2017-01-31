@@ -54,7 +54,9 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Classes\BankAccountTest.cs" />
+    <Compile Include="Classes\CheckingAccountTests.cs" />
     <Compile Include="Classes\DollarAmountTest.cs" />
+    <Compile Include="Classes\SavingAccoutTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

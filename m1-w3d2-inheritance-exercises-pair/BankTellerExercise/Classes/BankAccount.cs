@@ -16,8 +16,11 @@ namespace BankTellerExercise.Classes
             set { accountNumber = value; }
         }
 
-        private DollarAmount balance = new DollarAmount(0);
-
+        protected DollarAmount balance;
+        public BankAccount()
+        {
+            balance = new DollarAmount(0);
+        }
         public DollarAmount Balance
         {
             get { return balance; }
@@ -48,7 +51,7 @@ namespace BankTellerExercise.Classes
 
         {
             //int amountInCentsToTransfer = convertBalanceToCents(transferAmount.Dollars, transferAmount.Cents);
-            DollarAmount x = Withdraw(transferAmount);
+            DollarAmount x = this.Withdraw(transferAmount);
             destinationAccount.Deposit(x);
         }
 
