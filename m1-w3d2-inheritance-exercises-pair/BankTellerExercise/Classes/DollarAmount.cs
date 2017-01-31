@@ -99,6 +99,12 @@ namespace BankTellerExercise.Classes
             return new DollarAmount(newTotal);
         }
 
+        public override string ToString()
+        {
+            {
+                return "$" + Dollars + "." + Math.Abs(Cents);
+            }
+        }
 
 
 
