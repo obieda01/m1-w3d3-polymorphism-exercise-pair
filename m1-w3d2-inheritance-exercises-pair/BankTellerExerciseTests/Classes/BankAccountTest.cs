@@ -43,7 +43,7 @@ namespace BankTellerExerciseTests.Classes
         }
 
         [TestMethod]
-        public void BankAccount_WithdrawTests()
+        public void BankAccount_TransferTests()
         {
             DollarAmount testedInstanceExpected = new DollarAmount(1000);
             int expectedCents = testedInstanceExpected.Dollars * 100 + testedInstanceExpected.Cents;

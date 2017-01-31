@@ -31,7 +31,7 @@ namespace BankTellerExercise.Classes
             return balance;
         }
 
-        public DollarAmount Withdraw(DollarAmount amountToWithdraw)
+        public virtual DollarAmount Withdraw(DollarAmount amountToWithdraw)
 
         {
             int balanceToCents = convertBalanceToCents(balance.Dollars, balance.Cents) - convertBalanceToCents(amountToWithdraw.Dollars, amountToWithdraw.Cents);
