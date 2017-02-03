@@ -19,11 +19,11 @@ namespace TDDExercises
         {
             List<string> result = new List<string>();
 
-            for (int i = calculateLength(inputValue); i > 0; i = i / 10)
+            for (int i = calculateLength(inputValue); i >=0; i = i / 10)
             {
 
                 if (inputValue / 10 == 0) return singleDigit(inputValue);
-             
+                    
 
                 if (i == 10)
                 {
@@ -47,22 +47,20 @@ namespace TDDExercises
                             
                         }
                     }
-
+                    
                 }
 
                 if (i == 100)
                 {
                     result.Add(singleDigit(inputValue / 100));
                     result.Add(" hundred");
-                   
+                    
 
                 }
-                inputValue /= 10;
+                
                
             }
             return listToString(result);
-          
-            return "";
         }
 
         public string listToString(List<string> resultList)
