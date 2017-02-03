@@ -15,11 +15,17 @@ namespace TDDExercises.Tests
         [TestMethod]
         public void TensDigitTest()
         {
-            Assert.AreEqual("eleven", new NumbersToWords().numberInWords(11));
-             
-           // Assert.AreEqual("twenty", new NumbersToWords().numberInWords(20));
-//Assert.AreEqual("twenty one", new NumbersToWords().numberInWords(21));
+          Assert.AreEqual("eleven", new NumbersToWords().numberInWords(11));
+          Assert.AreEqual("fifty", new NumbersToWords().numberInWords(50));
+          Assert.AreEqual("twenty-one", new NumbersToWords().numberInWords(21));
+          Assert.AreEqual("fifty-five", new NumbersToWords().numberInWords(55));
         }
-        
+        [TestMethod]
+        public void HundredsDigitTest()
+        {
+            Assert.AreEqual("one hundred", new NumbersToWords().numberInWords(100));
+            Assert.AreEqual("one hundred thirty-three", new NumbersToWords().numberInWords(133));
+        }
+
     }
 }
