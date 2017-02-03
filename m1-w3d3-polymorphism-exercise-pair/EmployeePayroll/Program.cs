@@ -21,11 +21,14 @@ namespace EmployeePayroll
             Random r = new Random();
             int allHoursWorked = 0;
             double allPay = 0;
-
+           
             List<IWorker> iWorkerList = new List<IWorker>()
             {
                 new HourlyWorker(25, "Logi", "Tech"),new SalaryWorker(104000, "John", "Mack"),
                  new VolunteerWorker("Hobs", "Carb"),
+                 new VolunteerWorker("Hobs", "Carb"),
+                 new VolunteerWorker("Hobs", "Carb"),
+                  new HourlyWorker(25, "Logi", "Tech")
             };
 
             writeToConsole("Employee", "Hours Worked", "pay");
@@ -41,7 +44,7 @@ namespace EmployeePayroll
             }
 
 
-            Console.WriteLine("Total Hours:" + allHoursWorked);
+            Console.WriteLine("\nTotal Hours:" + allHoursWorked);
             Console.WriteLine("Total Pay: $" + allPay);
             Console.ReadKey();
         }
